@@ -1,0 +1,4 @@
+pandas~=2.2.3
+matplotlib
+openai~=1.68.2
+python-dotenv~=1.0.1

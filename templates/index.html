@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Budget App</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #f4f4f4; }
+        h1 { color: #333; }
+        form { margin-bottom: 20px; }
+        .table { width: 100%; border-collapse: collapse; background: #fff; margin-top: 20px; }
+        .table th, .table td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        .table th { background-color: #eee; }
+        img { margin-top: 20px; max-width: 600px; }
+    </style>
+</head>
+<body>
+    <h1>📊 Smart Budget Analyzer</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        <label for="file">Upload your bank CSV:</label><br>
+        <input type="file" name="file" accept=".csv" required>
+        <button type="submit">Analyze</button>
+    </form>
+
+    {% if table %}
+        <h2>🧾 Transactions</h2>
+        {{ table | safe }}
+
+        <h2>📈 Spending Breakdown</h2>
+        <img src="{{ chart }}" alt="Spending Pie Chart">
+    {% endif %}
+</body>
+</html>
