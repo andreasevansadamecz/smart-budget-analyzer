@@ -8,7 +8,7 @@ def load_transactions(filepath):
         df.columns = [col.strip().capitalize() for col in df.columns]
 
         df['Date'] = pd.to_datetime(df['Date'])
-        df['Amount'] - df['Amount'].astype(float)
+        df['Amount'] = df['Amount'].astype(float)
 
         return df
 
